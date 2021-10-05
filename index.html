@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+<body>
+
+    <div class="a">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione aliquid ut vel nulla, voluptatibus molestiae quas in aliquam a veritatis alias voluptas eius recusandae quam. Labore ratione error aut excepturi?
+    </div>
+    <div class="b">
+        
+    </div>
+    <div id="c">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus sunt ipsum obcaecati at quibusdam possimus illum tempore beatae doloremque!
+    </div>
+    <div id="d">
+        <p>I am a web designer</p>
+        <p>I can develop website</p>
+    </div>
+    <div id="e">
+        <a href="#">PHP</a>
+        <a href="#">MySql</a>
+        <a href="#">HTML</a>
+        <a href="#">SASS</a>
+        <a href="#">CSS</a>
+        <a href="#">Bootstrap</a>
+        <a href="#">Javascript</a>
+        <a href="#">Jquery</a>
+        <a href="#">Vue js</a>
+    </div>
+    <div id="f">
+        hello
+    </div>
+    <div id="g">
+        Chattogram city
+    </div>
+    <div id="addFunc">
+        <p>PHP Developer</p>
+        <button>Click</button>
+    </div>
+    <div id="classadd">
+        <div class="myadd"></div>
+        <button class="add">Add</button>
+        <button class="remove">Remove</button>
+        <button class="toggle">Toggle</button>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            //html add
+             $('.a').html('<h1>Noushedul Islam</h1>');
+            //text add
+            $('.b').text('Southern University');
+            //single css
+            $('#c').css('color','green');
+            //multiple css
+            $('#d p').css({
+                'color': 'red',
+                'border': '1px solid black'
+            });
+            //selector
+            // $('div a:first').css('color','red');
+            // $('div a:last').css('color','green');
+            $('div a:odd').css('color','green');
+            $('div a:even').css('color','red');
+            //attr with class add
+            $('#f').attr("class","myclass");
+            //text
+            var a = $('#g').text();
+            console.log(a);
+            //click event
+            $('#addFunc button').click(function(){
+                $('#addFunc p').css('color','green');
+            });
+            //class method
+            $('#classadd .add').click(function(){
+                $('.myadd').addClass('myclass');
+            });
+            //remove class
+            $('#classadd .remove').click(function(){
+                $('.myadd').removeClass();
+            });
+            //toggle class
+            $('#classadd .toggle').click(function(){
+                $('.myadd').toggleClass('myclass');
+            });
+
+        });
+    </script>
+</body>
+</html>

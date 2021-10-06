@@ -49,6 +49,66 @@
         <button class="remove">Remove</button>
         <button class="toggle">Toggle</button>
     </div>
+    <div id="h">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, qui distinctio? Modi, adipisci ratione. Voluptas beatae harum quaerat sapiente deserunt?
+        <button>Enpty</button>
+    </div>
+    <div id="i">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor aut veniam quae totam, iste dolore alias. Consectetur adipisci dolorum quo explicabo exercitationem earum harum quibusdam provident, debitis nemo! Accusantium, velit.
+        <button>Remove</button>
+    </div>
+    <div id="fade">
+       Hello Noushedul zIslam akib
+       <button>Fade Out</button>
+    </div>
+    <button class="fin">Fade In</button>
+    <button class="ftoggle">Fade Toggle</button>
+
+    <div id="onoffmethod">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus iste veniam dolor debitis sequi, similique illo qui quod accusamus ex harum hic doloremque aperiam maiores! Ad veniam sapiente quidem dolores?
+    </div>
+    <button class="clicdblc">Click Or DblClick</button>
+
+    <div id="onoffmultiple">
+        Click/mouseover this text to change bg/color;
+    </div>
+    <div id="slide">
+        Computer Science and Engineering 
+    </div>
+    <button class="slideup">SlideUp</button>
+    <button class="slidedown">SlideDown</button>
+    <button class="slidetoggle">SlideToggle</button>
+
+    <div id="appendprepend">
+        <ul>
+            <li>Two</li>
+        </ul>
+    </div>
+    <button class="appe">Append</button>
+    <button class="pre">Prepend</button>
+
+    <br>
+    <button class="left">Move Left</button>
+    <button class="right">Move Right</button>
+    <button class="round">Move Round</button>
+    <div id="anima">
+        animation
+    </div>
+
+    <div>
+        <ul id="conditionFunc">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>four</li>
+            <li>Five</li>
+            <li>Six</li>
+        </ul>
+    </div>
+    
+    
+    
+   
 
 
 
@@ -92,6 +152,94 @@
             $('#classadd .toggle').click(function(){
                 $('.myadd').toggleClass('myclass');
             });
+            //empty
+            $('#h button').click(function(){
+                $('#h').remove();
+            });
+            //remove
+            $('#i button').click(function(){
+                $('#i').remove();
+            });
+            //fadeIn
+            $('.fin').click(function(){
+                $('#fade').fadeIn('slow');
+            });
+            //fadeOut
+            $('#fade button').click(function(){
+                $('#fade').fadeOut('fast');
+            });
+            //fadeToggle
+            $('.ftoggle').click(function(){
+                $('#fade').fadeToggle(4000);
+            });
+            //on off method
+            $('.clicdblc').on('click dblClick',function(){
+                $('#onoffmethod').css('color','red');
+            });
+            //om off multiple
+            $('#onoffmultiple').on({
+                'click': function(){
+                    $(this).css('color','green');
+                },
+                'mouseout': function(){
+                    $(this).css({
+                        'background': 'orange',
+                        'padding': '20px'
+                    });
+                }
+            });
+            //slideup, slidedown,slidetoggle
+            $('.slideup').click(function(){
+                $('#slide').slideUp(3000);
+            });
+            $('.slidedown').click(function(){
+                $('#slide').slideDown(3000);
+            });
+            $('.slidetoggle').click(function(){
+                $('#slide').slideToggle(3000);
+            });
+            //append, prepend
+            $('.pre').click(function(){
+                $('#appendprepend ul').prepend('<li>One</li>');
+            });
+            $('.appe').click(function(){
+                $('#appendprepend ul').append('<li>Three</li>');
+            });
+            //animate
+            var box = $('#anima');
+            $('.right').click(function(){
+                box.animate({
+                    left: 300
+                });
+            });
+            $('.left').click(function(){
+                box.animate({
+                    left: 0
+                });
+            });
+            $('.round').click(function(){
+                box.animate({
+                    left: 200,
+                }),
+                box.animate({
+                    top: 200,
+                }),
+                box.animate({
+                    left: 0,
+                }),
+                box.animate({
+                    top: 0,
+                });
+            });
+            //each condition
+            var li = $('#conditionFunc');
+            li.each(function(item){
+                if(item<4){
+                    $(this).css('color','green');
+                }else{
+                    $(this).css('color','red');
+                }
+            })
 
         });
     </script>
